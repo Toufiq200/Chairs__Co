@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChairCo - Stylish & Comfortable Chairs</title>
+  <link rel="stylesheet" href="Waseem.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">ChairCo</div>
+    <div class="menu-toggle" id="menu-toggle">
+      &#9776;
+    </div>
+    <nav id="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Explore the Art of Comfort</h1>
+      <p>Discover stylish, ergonomic chairs that blend luxury and design.</p>
+      <a href="#products" class="btn">Shop Now</a>
+    </div>
+    <div class="slider">
+      <img src="https://png.pngtree.com/png-vector/20240125/ourmid/pngtree-orange-office-chair-png-image_11548338.png"width="400px" class="slide" />
+      <img src="https://png.pngtree.com/png-vector/20240203/ourmid/pngtree-black-office-chair-png-image_11537176.png"width="400px" class="slide" />
+      <img src="https://static.vecteezy.com/system/resources/previews/022/449/107/non_2x/office-chair-isolated-on-transparent-free-png.png" width="400px" class="slide" />
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>At ChairCo, we specialize in designing premium-quality chairs that merge innovation with elegance. Whether it's for your office, home, or studio, we ensure each chair delivers unmatched comfort and aesthetic value.</p>
+  </section>
+
+  <section id="products" class="products">
+    <h2>Our Products</h2>
+    <div class="product-list">
+      <div class="product-card">
+        <img src="product1.jpg" alt="Chair Model 1">
+        <h3>Elegant Office Chair</h3>
+        <p>Perfect for productivity and posture.</p>
+      </div>
+      <div class="product-card">
+        <img src="product2.jpg" alt="Chair Model 2">
+        <h3>Luxury Lounge Chair</h3>
+        <p>Sink into comfort and style.</p>
+      </div>
+      <div class="product-card">
+        <img src="product3.jpg" alt="Chair Model 3">
+        <h3>Modern Dining Chair</h3>
+        <p>Minimal design with a premium feel.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <img src="https://purepng.com/public/uploads/large/purepng.com-office-chairchairfurniturebusinessobjectsoffice-chair-821523987888r4nnh.png"width="400px" alt="Chair in room">
+      <img src="https://purepng.com/public/uploads/large/purepng.com-office-chairchairfurniturebusinessobjectsoffice-chair-821523987888r4nnh.png"width="400px" alt="Close-up chair">
+      <img src="https://purepng.com/public/uploads/large/purepng.com-office-chairchairfurniturebusinessobjectsoffice-chair-821523987888r4nnh.png"width="400px" alt="Chair setup">
+      <img src="https://purepng.com/public/uploads/large/purepng.com-office-chairchairfurniturebusinessobjectsoffice-chair-821523987888r4nnh.png" width="400px" alt="Showroom">
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Custom Chair Designs</li>
+      <li>Interior Decor Assistance</li>
+      <li>Bulk Corporate Orders</li>
+      <li>3D Chair Modeling</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ChairCo. All rights reserved.</p>
+    <p>Follow us on <a href="#">Instagram</a> | <a href="#">Facebook</a></p>
+  </footer>
+
+  <script>
+    let currentSlide = 0;
+const slides = document.querySelectorAll('.slider .slide');
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.style.display = 'none';
+  });
+  slides[index].style.display = 'block';
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+setInterval(nextSlide, 4000);
+
+window.onload = () => {
+  showSlide(currentSlide);
+};
+
+// Toggle nav on mobile
+const menuToggle = document.getElementById('menu-toggle');
+const navbar = document.getElementById('navbar');
+
+menuToggle.addEventListener('click', () => {
+  navbar.classList.toggle('active');
+});
+  </script>
+</body>
+</html>
