@@ -1,4 +1,4 @@
-/* General Reset & Base Styles */
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
@@ -41,7 +41,7 @@ body {
 
 /* Header */
 header {
-  background: linear-gradient(to right, #ff6e7f, #bfe9ff);
+  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -49,7 +49,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 999;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -96,24 +96,27 @@ nav a:hover {
 .hero {
   padding: 5rem 2rem;
   text-align: center;
-  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  background: #fef9f9;
 }
-
 .hero-text h1 {
   font-size: 3rem;
-  animation: slideInDown 1s ease-out;
+  background: linear-gradient(to right, #f67280, #f8b195);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  text-align: center;
 }
 
 .hero-text p {
   font-size: 1.2rem;
+  color: #f5f5f5;
   margin: 1rem 0;
-  animation: fadeIn 2s ease-in;
 }
 
 .hero .btn {
   padding: 0.8rem 1.5rem;
-  background: #ff6e7f;
-  color: white;
+  background: #ffd700;
+  color: black;
   border: none;
   border-radius: 25px;
   text-decoration: none;
@@ -122,7 +125,8 @@ nav a:hover {
 }
 
 .hero .btn:hover {
-  background: #ff9472;
+  background: #ff6e7f;
+  color: white;
 }
 
 /* Slider */
@@ -131,7 +135,9 @@ nav a:hover {
   max-width: 600px;
   overflow: hidden;
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  padding: 1rem;
 }
 
 .slider img {
@@ -140,31 +146,13 @@ nav a:hover {
   transition: opacity 0.5s;
 }
 
-/* Section Styling */
-section {
-  padding: 4rem 2rem;
-  background: #fff;
-}
-
-section:nth-child(even) {
-  background: #f9f9ff;
-}
-
-h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #333;
-}
-
-/* About */
+/* About & Counters */
 .about p {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }
 
-/* Counters */
 .counters {
   display: flex;
   justify-content: center;
@@ -210,25 +198,28 @@ h2 {
 }
 
 /* Gallery */
+.gallery {
+  padding: 4rem 2rem;
+  background: #f7f7f7;
+}
+
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1rem;
-  padding: 1rem;
+  column-count: 3;
+  column-gap: 1rem;
 }
 
 .gallery-grid img {
   width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  break-inside: avoid;
 }
 
 .gallery-grid img:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
 /* Lightbox */
@@ -257,59 +248,6 @@ h2 {
   transition: transform 0.3s ease;
 }
 
-/* Services */
-.services ul {
-  list-style: none;
-  max-width: 600px;
-  margin: auto;
-  padding-left: 0;
-}
-
-.services li {
-  background: #e1f5fe;
-  margin: 0.5rem 0;
-  padding: 1rem;
-  border-left: 5px solid #29b6f6;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-.services li:hover {
-  background: #b3e5fc;
-}
-
-/* Contact */
-.contact form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 500px;
-  margin: auto;
-}
-
-.contact input,
-.contact textarea {
-  padding: 1rem;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-}
-
-.contact button {
-  background: #00c6ff;
-  color: white;
-  padding: 1rem;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s;
-}
-
-.contact button:hover {
-  background: #0072ff;
-}
-
 /* Testimonials */
 .testimonials {
   background: #f0f8ff;
@@ -332,10 +270,6 @@ h2 {
   background: #f9f9f9;
   padding: 3rem 2rem;
   text-align: center;
-}
-
-.newsletter h2 {
-  margin-bottom: 1rem;
 }
 
 .newsletter form {
@@ -365,17 +299,34 @@ h2 {
   background: #5a3e8d;
 }
 
-/* WhatsApp Floating Button */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
+/* Contact */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: auto;
 }
 
-.whatsapp-float img {
-  border-radius: 50%;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+.contact input, .contact textarea {
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.contact button {
+  background: #00c6ff;
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.contact button:hover {
+  background: #0072ff;
 }
 
 /* Footer */
@@ -386,25 +337,17 @@ footer {
   color: white;
 }
 
-/* Animations */
-@keyframes slideInDown {
-  from {
-    transform: translateY(-100px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+/* WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.whatsapp-float img {
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 /* Responsive */
@@ -439,7 +382,7 @@ footer {
   }
 
   .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
+    column-count: 2;
   }
 }
 
@@ -448,63 +391,24 @@ footer {
     font-size: 1.5rem;
   }
 
-  .hero {
-    padding: 3rem 1rem;
+  .gallery-grid {
+    column-count: 1;
   }
 
   .hero-text h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .hero-text p {
     font-size: 1rem;
   }
 
-  .hero .btn {
-    font-size: 0.9rem;
+  .btn {
     padding: 0.6rem 1.2rem;
-  }
-
-  .footer {
     font-size: 0.9rem;
   }
 
-  .whatsapp-float img {
-    width: 45px;
-  }
-
-  .newsletter form {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .newsletter input,
-  .newsletter button {
-    width: 100%;
-  }
-
-  .counters {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .counters h3 {
-    font-size: 2rem;
-  }
-
-  .testimonial-box {
-    padding: 1rem;
-  }
-
-  .testimonial-box p {
-    font-size: 0.95rem;
-  }
-
-  .testimonial-box h4 {
-    font-size: 0.85rem;
-  }
-
-  .gallery-grid {
-    grid-template-columns: 1fr;
+  footer {
+    font-size: 0.9rem;
   }
 }
